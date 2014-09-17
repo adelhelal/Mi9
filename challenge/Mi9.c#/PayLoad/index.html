@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Payload</title>
+</head>
+<body>
+
+  <textarea id="payload" name="payload" rows="15" cols="50"></textarea>
+    <br />
+  <input type="button" value="Search" onclick="find();" />
+  <p id="product" />
+
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+  <script>
+      var uri = "api/payload";
+
+      function find() {
+          $.ajax({
+              type: "POST",
+              url: uri,
+              dataType: 'json',
+              contentType: 'application/json',
+              async: true,
+              data: JSON.stringify($('#payload').val()),
+              success: function (data) {
+                  $('#product').text(JSON.stringify(data));
+              },
+              error: function (data) {
+                  $('#product').text(JSON.stringify(data));
+              }
+      });
+      }
+
+      //$(document).ready(function () {
+      //    // Send an AJAX request
+      //    $.getJSON(uri)
+      //        .done(function (data) {
+      //            // On success, 'data' contains a list of products.
+      //            $.each(data, function (key, item) {
+      //                // Add a list item for the product.
+      //                $('<li>', { text: item }).appendTo($('#product'));
+      //            });
+      //        });
+      //});
+
+      //function find() {
+      //    var payload = JSON.parse($('#prodId').val());
+      //    $.getJSON(uri)
+      //        .done(function (data) {
+      //            $('#product').text(JSON.stringify(data));
+      //        })
+      //        .fail(function (jqXHR, textStatus, err) {
+      //            $('#product').text('Error: ' + err);
+      //        });
+      //}
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+    "id": "/payload",
+    "type": "object",
+    "properties": {
+		"country": { "type" : "string" },
+		"description": { "type" : "string" },
+		"drm": { "type" : "boolean" },
+		"episodeCount": { "type" : "number" },
+		"genre": { "type" : "string" },
+		"image": { "$ref": "/image" },
+		"language": { "type" : "string" },
+		"nextEpisode": [{ "$ref": "/episode" }, { "type" : "null" }],
+		"primaryColour": { "type" : "string" },
+		"seasons": [{
+			"type": "array",
+	        "items": { "$ref": "/season" }
+        }, { "type" : "null" }],
+		"slug": { "type" : "string" },
+		"title": { "type" : "string" },
+		"tvChannel": { "type" : "string" }
+	}
+}

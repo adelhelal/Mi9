@@ -1,0 +1,11 @@
+{
+    "id": "/episode",
+    "type": "object",
+    "properties": {
+		"channel": { "type" : "null" },
+		"channelLogo": { "type" : "string" },
+		"date": { "type" : "null" },
+		"html": { "type" : "string" },
+		"url": { "type" : "string" }
+	}
+}

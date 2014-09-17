@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Votes</title>
+    <script src="http://9news.static9.net.au/scripts/jquery/jquery-1.8.3/jquery.js" type="text/javascript"></script>
+</head>
+<body>
+    <h3>Vote!</h3>
+    {{#each questions}}
+        <h4>{{{header}}}</h4>
+        {{#if text}}<div>{{{text}}}</div>{{/if}}
+        {{#each media}}
+            <img src="{{url}}" {{#if alt}}alt="{{alt}}"{{/if}} />
+            {{#if caption}}<div>{{{caption}}}</div>{{/if}}
+        {{/each}}
+        {{#each answers}}
+            <div>
+                <input data-question="{{../id}}" data-answer="{{id}}" type="button" value="{{text}}" onclick="return vote(this);" />
+            </div>
+            <div id="{{id}}">{{counter}}</div>
+        {{/each}}
+    {{/each}}
+    <script>
+        function vote(element) {
+            $.ajax({
+                type: 'POST',
+                url: 'http://{{host}}/network/questions/' + element.dataset.question + '/vote',
+                cache: true,
+                context: this,
+                dataType: 'json',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    answerId: element.dataset.answer
+                }),
+                success: function (question) {
+                    console.log(question);
+                    if (question.answers && question.answers.length) {
+                        for (var i = 0; i < question.answers.length; i++) {
+                            document.getElementById(question.answers[i].id).innerHTML = question.answers[i].counter;
+                        }
+                    }
+                },
+                error: function (message) {
+                    console.log(message);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

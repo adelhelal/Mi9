@@ -1,0 +1,38 @@
+{
+  "name": "Mi9-Vote-Service",
+  "description": "A Service to provide questions and answers from sitecore, and to store statistics in a central location",
+  "version": "0.0.1",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "1.5.0",
+    "coffee-script": "^1.8.0",
+    "express": "^4.6.1",
+    "express-handlebars": "^1.1.0",
+    "jsonschema": "1.0.0",
+    "mysql": "^2.5.0",
+    "platform": "git+https://stash.9msn.net/scm/net/platform.git",
+    "q": "^1.0.1",
+    "request": "^2.42.0",
+    "underscore": "^1.7.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-concurrent": "^1.0.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-nodemon": "^0.3.0",
+    "matchdep": "^0.3.0",
+    "mocha": "^1.21.3"
+  },
+  "scripts": {
+    "install": "npm install ./node_modules/platform/custom_modules/mi9-environment"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.9msn.net:7999/net/services-vote.git"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}

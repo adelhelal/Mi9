@@ -1,0 +1,7 @@
+{
+    "id": "/season",
+    "type": "object",
+    "properties": {
+		"slug": { "type" : "string" }
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "mi9-ads",
+  "version": "2.0.0",
+  "description": "The Ads Library",
+  "main": "src/index.coffee",
+  "repository": {
+    "type": "git",
+    "url": "https://stash.9msn.net/scm/net/platform.git"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mi9 - Adel Helal",
+  "license": "ISC",
+  "dependencies": {
+    "q": "^1.0.1"
+  }
+}

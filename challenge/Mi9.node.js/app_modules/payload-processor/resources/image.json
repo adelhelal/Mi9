@@ -1,0 +1,7 @@
+{
+    "id": "/image",
+    "type": "object",
+    "properties": {
+		"showImage": { "type" : "string" }
+    }
+}

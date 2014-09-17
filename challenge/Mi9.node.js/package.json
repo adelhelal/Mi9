@@ -1,0 +1,20 @@
+{
+	"name" : "Platform",
+	"description" : "Application to process payloads",
+	"version" : "0.0.1",
+	"main" : "server.js",
+	"dependencies": {
+		"express": "4.6.1",
+		"body-parser": "1.5.0",
+		"jsonschema": "1.0.0",
+		"mocha": "1.21.3",
+		"taffy": "2.6.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/adelhelal/Mi9.node.js.git"
+	},
+	"engines": {
+    "node": "0.10.x"
+	}
+}

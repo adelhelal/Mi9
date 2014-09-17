@@ -1,0 +1,15 @@
+{
+    "id": "/answer",
+    "type": "object",
+    "properties": {
+		"id": { "type" : "string", "required": true },
+		"text": { "type" : "string", "required": true },
+		"media": {
+			"type": "array",
+	        "items": { "$ref": "/media" }
+        },
+		"seed": { "type" : "string" },
+		"templateId": { "type" : "string", "required": true },
+		"url": { "type" : "string", "required": true }
+	}
+}

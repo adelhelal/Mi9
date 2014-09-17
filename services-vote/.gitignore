@@ -1,0 +1,12 @@
+#folders
+build
+node_modules
+npm-debug.log
+
+# Misc.
+*.sln
+*.suo
+*.njsproj
+.ntvs_analysis.dat
+
+build/index.coffee

@@ -1,0 +1,14 @@
+{
+    "id": "/payloads",
+    "type": "object",
+    "properties": {
+		"payload": {
+			"type": "array",
+	        "items": { "$ref": "/payload" },
+			"required": true
+        },
+		"skip": { "type" : "number" },
+		"take": { "type" : "number" },
+		"totalRecords": { "type" : "number" }
+	}
+}

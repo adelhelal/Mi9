@@ -1,0 +1,37 @@
+<html>
+<body>
+    <form method="post" action="/">
+        <h3>{0}</h3>
+        <p>
+            <textarea id="data" name="data" rows="20" cols="50"></textarea>
+        </p>
+        <p>
+            <input type='button' value='Click here!' onclick="find();" />
+        </p>
+        <div id="product"></div>
+    </form>
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+    <script>
+        var uri = "/";
+
+        function find() {
+            $.ajax({
+                type: "POST",
+                url: uri,
+                dataType: 'json',
+                contentType: 'application/json',
+                async: true,
+                data: $('#data').val(),
+                success: function (data) {
+                    $('#product').text(JSON.stringify(data));
+                },
+                error: function (data) {
+                    $('#product').text(JSON.stringify(data));
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

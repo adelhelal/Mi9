@@ -1,0 +1,9 @@
+{
+    "id": "/media",
+    "type": "object",
+    "properties": {
+		"url": { "type" : "string" },
+		"alt": { "type" : "string" },
+		"caption": { "type" : "string" }
+	}
+}
